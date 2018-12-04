@@ -8,6 +8,7 @@
   <style>
     #map{
       height:500px;
+      width:100%;
     }
   </style>
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -19,9 +20,6 @@
   <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-  
 
   <link rel="stylesheet" href="css/style.css">
   <!-- skin -->
@@ -35,38 +33,7 @@
 
 </head>
 
-<body onload="initialize();">
-  <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '338918216884566',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v3.2'
-    });
-      
-    FB.AppEvents.logPageView();   
-      
-  };
-
-  (function(d, s, id){
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {return;}
-    js = d.createElement(s); js.id = id;
-    js.src = "https://connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-  </script>
-  <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=338918216884566&autoLogAppEvents=1';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-  </script>
-  
+<body>
   <section id="header" class="appear"></section>
   <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(5, 42, 62, 1);">
     <div class="container">
@@ -75,14 +42,14 @@
       	  <span class="fa fa-bars color-white"></span>
         </button>
         <div class="navbar-logo">
-          <a href="index.html">LOGO GOES HERE</a>
+          <a href="index.html"><img data-0="width:155px;" data-300=" width:120px;" src="img/logo.png" alt=""></a>
         </div>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
           <li class="active"><a href="index.html">Home</a></li>
           <li><a href="#section-about">About</a></li>
-          <li class="active"><a href="login.html">Sign In</a></li>
+          <li class="active"><a href="#section-login">Sign In</a></li>
           <li class="active"><a href="index.html">Register</a></li>
           <li class="active"><a href="saveRoutes.html">Save Routes</a></li>
           <li><a href="#section-contact">Contact</a></li>
@@ -94,8 +61,8 @@
 
   <section id="intro">
     <div class="intro-content">
-      <h2>Welcome to Austin SafeRoutes!</h2>
-      <h3>Save your routes and plan for your commute</h3>
+      <h2>Welcome to Vlava!</h2>
+      <h3>Lorem ipsum dolor sit amet, elit persecuti efficiendi</h3>
       <div>
         <a href="#section-services" class="btn-get-started scrollto">Get Started</a>
       </div>
@@ -103,56 +70,47 @@
   </section>
 
   <!-- services -->
-  
   <section id="section-services" class="section pad-bot30 bg-white">
-    
     <div class="container">
       <div class="row">
-          <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <strong>INCIDENT STATUS: </strong>
-          <select id="incidentStatus">
-            <option value="ACTIVE">ACTIVE</option>
-            <option value="ARCHIVED">ARCHIVED</option>
-          </select>
-        </div>
-        <div class="col-md-5">
-          <strong>INCIDENT TYPE: </strong>
-          <select id="incidentType">
-            <option value="">ALL</option>
-            <option value="Traffic Hazard">Traffic Hazard</option>
-            <option value="Crash Urgent">Crash Urgent</option>
-            <option value="Crash Service">Crash Service</option>
-            <option value="Traffic Impediment">Traffic Impediment</option>
-            <option value="COLLISION">Collision</option>
-            <option value="zSTALLED VEHICLE">Stalled Vehicle</option>
-            <option value="COLLISION WITH INJURY">Collision With Injury</option>
-            <option value="LOOSE LIVESTOCK">Loose Livestock</option>
-            <option value="COLLISN/ LVNG SCN">COLLISN/ LVNG SCN</option>
-            <option value="COLLISION/PRIVATE PROPERTY">Collision With Private Property</option>
-            <option value="VEHICLE FIRE">Vehicle Fire</option>
-            <option value="BLOCKED DRIV/ HWY">Blocked Road</option>
-            <option value="ICY ROADWAY">Icy Roadway</option>
-            <option value="BOAT ACCIDENT">Boat Accident</option>
-            <option value="AUTO/ PED">AUTO/ PED</option>
-            <option value="FLEET ACC/ INJURY">FLEET ACC/ INJURY</option>
-            <option value="TRAFFIC FATALITY">Traffic Fatality</option>
-            <option value="N/ HZRD TRFC VIOL">N/ HZRD TRFC VIOL</option>
-            <option value="COLLISN / FTSRA">COLLISION / FTSRA</option>
-            <option value="HIGH WATER">High Water</option>
-          </select>
-        </div>
-        <div class="col-md-2">
-            <input type= "submit" class ="btn-filter-data" type="Create Route" onclick="filterData();"/>
+        <div class="col-lg-8">
+          <div id="map">
+
+          </div>
         </div>
       </div>
     </div>
-    <div id="map"></div>
   </section>
-  <script src="js/filterData.js"></script>
-  <script src="js/map.js"></script>
+  <script>
+      // construct the query string
+      var url = 'https://data.austintexas.gov/resource/r3af-2r8x.json?traffic_report_status=ACTIVE';
+
+      // build map
+      var map;
+      var myLatLng = {lat: 30.4001631, lng: -97.68025269999998};
+      function initMap() {
+        var options = {
+          zoom:12,
+          center: myLatLng
+        }
+        map = new google.maps.Map(document.getElementById('map'), options);
+
+      }
+
+      // // // Retrieve our data and plot it
+      $.getJSON(url, function(data) {
+        $.each(data, function(i, entry) {
+          var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(entry.latitude,
+                                            entry.longitude),
+            map: map,
+            title: entry.issue_reported
+                  + ' \n' + entry.address
+                  + '\n' + entry.published_date
+          });
+        });
+      });
+  </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdLbIKfOqZpLFI9-X76P81ADhY5nxFNps&callback=initMap"></script>
 
   <!-- spacer section:testimonial -->
@@ -219,32 +177,51 @@
       <div class="row mar-bot40">
         <div class="col-md-offset-3 col-md-6">
           <div class="section-header">
-            <h2 class="section-heading animated" data-animation="bounceInUp">Behind Austin SafeRoutes</h2>
+            <h2 class="section-heading animated" data-animation="bounceInUp">Behind Vlava</h2>
             <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit, sed quia non numquam.</p>
           </div>
         </div>
       </div>
 
       <div class="row align-center mar-bot40">
-        <div class="col-md-offset-3 col-md-3">
+        <div class="col-md-3">
           <div class="team-member">
-            <figure class="member-photo"><img src="img/team/alex.jpeg" alt=""></figure>
+            <figure class="member-photo"><img src="img/team/member1.jpg" alt=""></figure>
             <div class="team-detail">
-              <h4>Alexander Solinger</h4>
-              <span>St. Edward's University</span>
+              <h4>Jason Doe</h4>
+              <span>User experiences</span>
             </div>
           </div>
         </div>
         <div class="col-md-3">
           <div class="team-member">
-            <figure class="member-photo"><img src="img/team/nick.jpeg" alt=""></figure>
+            <figure class="member-photo"><img src="img/team/member2.jpg" alt=""></figure>
             <div class="team-detail">
-              <h4>Nicholas Scharold</h4>
-              <span>St. Edward's University</span>
+              <h4>Timothy Clark</h4>
+              <span>Web developer</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="team-member">
+            <figure class="member-photo"><img src="img/team/member3.jpg" alt=""></figure>
+            <div class="team-detail">
+              <h4>Vicky Tan</h4>
+              <span>Web designer</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="team-member">
+            <figure class="member-photo"><img src="img/team/member4.jpg" alt=""></figure>
+            <div class="team-detail">
+              <h4>Kevin Peterson</h4>
+              <span>UI designer</span>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   </section>
   <!-- /about -->
@@ -253,39 +230,48 @@
   <section id="parallax1" class="section" data-stellar-background-ratio="0.5">
     <div class="container">
       <div class="row appear stats">
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="align-center color-white txt-shadow">
             <div class="icon">
-              <i class="fas fa-car-crash fa-5x"></i>
+              <i class="fa fa-coffee fa-5x"></i>
             </div>
-            <strong id="counter-coffee" class="number">25</strong><br>
-            <span class="text">Reported Traffic Incidents Today</span>
+            <strong id="counter-coffee" class="number">500</strong><br>
+            <span class="text">Black Coffee Cups</span>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
+          <div class="align-center color-white txt-shadow">
+            <div class="icon">
+              <i class="fa fa-music fa-5x"></i>
+            </div>
+            <strong id="counter-music" class="number">345</strong><br>
+            <span class="text">MP3 Songs</span>
+          </div>
+        </div>
+        <div class="col-md-3">
           <div class="align-center color-white txt-shadow">
             <div class="icon">
               <i class="fa fa-clock-o fa-5x"></i>
             </div>
-            <strong id="counter-clock" class="number">20</strong><br>
-            <span class="text">Minutes Since Last Reported Incident</span>
+            <strong id="counter-clock" class="number">1235</strong><br>
+            <span class="text">Hard Minutes</span>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="align-center color-white txt-shadow">
             <div class="icon">
-              <i class="fas fa-route fa-5x"></i>
+              <i class="fa fa-heart fa-5x"></i>
             </div>
             <strong id="counter-heart" class="number">478</strong><br>
-            <span class="text">Saved Routes</span>
+            <span class="text">Lovely Clients</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- <section id="clients" class="section clearfix bg-white"> -->
-    <!-- <div class="container">
+  <section id="clients" class="section clearfix bg-white">
+    <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="row">
@@ -315,12 +301,12 @@
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
 
   <!-- map -->
-  <!-- <section id="section-map" class="clearfix">
+  <section id="section-map" class="clearfix">
     <div id="google-map" data-latitude="40.713417" data-longitude="-74.0092125"></div>
-  </section> -->
+  </section>
 
   <!-- contact -->
   <section id="section-contact" class="section appear clearfix">
@@ -389,13 +375,13 @@
         <ul class="footer-menu">
           <li><a href="#">Home</a></li>
           <li><a href="#">About us</a></li>
-          <li><a href="privacyPolicy.html">Privacy policy</a></li>
+          <li><a href="#">Privacy policy</a></li>
           <li><a href="#">Get in touch</a></li>
         </ul>
       </div>
       <div class="row align-center copyright">
         <div class="col-sm-12">
-          <p>Copyright &copy; Austin SafeRoutes All rights reserved</p>
+          <p>Copyright &copy; All rights reserved</p>
         </div>
       </div>
       <div class="credits">
