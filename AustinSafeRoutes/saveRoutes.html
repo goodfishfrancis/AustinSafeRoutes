@@ -76,8 +76,6 @@
             });
 
 
-        // Instantiate a directions service.
-        directionsService = new google.maps.DirectionsService();
 
         // Create a map and center it on Austin.
         var myOptions = {
@@ -91,13 +89,20 @@
         geocoder.geocode( { 'address': address}, function(results, status) {
             map.setCenter(results[0].geometry.location);
         });
+        // Instantiate a directions service.
+        directionsService = new google.maps.DirectionsService();
 
 
         // Create a renderer for directions and bind it to the map.
         var rendererOptions = {
-            map: map
+            map: map,
+            draggable: true
         }
         directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
+        
+        directionsDisplay.addListener('directions_changed', function() {
+            computeTotalDistance(directionsDisplay.getDirections());
+        });
 
         // Instantiate an info window to hold step text.
         stepDisplay = new google.maps.InfoWindow();
@@ -141,7 +146,8 @@
         });
         // Create a renderer for directions and bind it to the map.
         var rendererOptions = {
-            map: map
+            map: map,
+            draggable: true
         }
         directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
 
@@ -217,9 +223,7 @@
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
             <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="#section-about">About</a></li>
-            <li class="active"><a href="#section-login">Sign In</a></li>
-            <li class="active"><a href="index.html">Register</a></li>
+            <li class="active"><a href="login.html">Sign In</a></li>
             <li class="active"><a href="saveRoutes.html">Save Routes</a></li>
             <li><a href="#section-contact">Contact</a></li>
         </ul>
@@ -483,10 +487,10 @@
       </div>
       <div class="row align-center mar-bot20">
         <ul class="footer-menu">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Privacy policy</a></li>
-          <li><a href="#">Get in touch</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html">About us</a></li>
+          <li><a href="privacyPolicy.html">Privacy policy</a></li>
+          <li><a href="index.html">Get in touch</a></li>
         </ul>
       </div>
       <div class="row align-center copyright">

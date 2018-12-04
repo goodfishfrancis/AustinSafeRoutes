@@ -11,6 +11,8 @@
     }
   </style>
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="js/map.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdLbIKfOqZpLFI9-X76P81ADhY5nxFNps&callback=initMap"></script>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- <link rel="stylesheet" type="text/css" href="js/rs-plugin/css/settings.css" media="screen"> -->
@@ -35,7 +37,7 @@
 
 </head>
 
-<body onload="initialize();">
+<body onload="initMap(); filterData();">
   <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -83,7 +85,6 @@
           <li class="active"><a href="index.html">Home</a></li>
           <li><a href="#section-about">About</a></li>
           <li class="active"><a href="login.html">Sign In</a></li>
-          <li class="active"><a href="index.html">Register</a></li>
           <li class="active"><a href="saveRoutes.html">Save Routes</a></li>
           <li><a href="#section-contact">Contact</a></li>
         </ul>
@@ -107,9 +108,9 @@
   <section id="section-services" class="section pad-bot30 bg-white">
     
     <div class="container">
-      <div class="row">
-          <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
-      </div>
+      <!--<div class="row">-->
+      <!--    <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>-->
+      <!--</div>-->
       <div class="row">
         <div class="col-md-4">
           <strong>INCIDENT STATUS: </strong>
@@ -145,15 +146,15 @@
           </select>
         </div>
         <div class="col-md-2">
-            <input type= "submit" class ="btn-filter-data" type="Create Route" onclick="filterData();"/>
+            <input type= "submit" class ="btn-filter-data" onclick="filterData();"/>
         </div>
       </div>
     </div>
-    <div id="map"></div>
+    <script src="js/map.js"></script>
+    <div id="map" onload="filterData();"></div>
   </section>
-  <script src="js/filterData.js"></script>
-  <script src="js/map.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdLbIKfOqZpLFI9-X76P81ADhY5nxFNps&callback=initMap"></script>
+  
+  
 
   <!-- spacer section:testimonial -->
   <section id="testimonials" class="section" data-stellar-background-ratio="0.5">
@@ -166,41 +167,23 @@
                 <li>
                   <div class="testimonial clearfix">
                     <div class="mar-bot20">
-                      <img alt="" src="img/testimonial/testimonial1.png" class="img-circle">
+                      <img alt="" src="img/testimonial/mockup1.png" class="img-square">
                     </div>
-                    <i class="fa fa-quote-left fa-5x"></i>
                     <h5>
 												Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum. In vitae nulla lacus. Sed sagittis tortor vel arcu sollicitudin nec tincidunt metus suscipit.Nunc velit risus, dapibus non interdum.
 											</h5>
                     <br/>
-                    <span class="author">&mdash; SARAH DOE <a href="#">www.siteurl.com</a></span>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="testimonial clearfix">
-                    <div class="mar-bot20">
-                      <img alt="" src="img/testimonial/testimonial2.png" class="img-circle">
-                    </div>
-                    <i class="fa fa-quote-left fa-5x"></i>
-                    <h5>
-												Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum. In vitae nulla lacus. Sed sagittis tortor vel arcu sollicitudin nec tincidunt metus suscipit.Nunc velit risus, dapibus non interdum.
-												</h5>
-                    <br/>
-                    <span class="author">&mdash; NICOLE DOE <a href="#">www.siteurl.com</a></span>
                   </div>
                 </li>
                 <li>
                   <div class="testimonial clearfix">
                     <div class="mar-bot20">
-                      <img alt="" src="img/testimonial/testimonial3.png" class="img-circle">
+                      <img alt="" src="img/testimonial/mockup2.png" class="img-square">
                     </div>
-                    <i class="fa fa-quote-left fa-5x"></i>
                     <h5>
 											Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum. In vitae nulla lacus. Sed sagittis tortor vel arcu sollicitudin nec tincidunt metus suscipit.Nunc velit risus, dapibus non interdum.
 											</h5>
                     <br/>
-                    <span class="author">&mdash; DASON KRUN <a href="#">www.siteurl.com</a></span>
                   </div>
                 </li>
               </ul>
@@ -258,7 +241,7 @@
             <div class="icon">
               <i class="fas fa-car-crash fa-5x"></i>
             </div>
-            <strong id="counter-coffee" class="number">25</strong><br>
+            <strong id="counter-coffee" class="number"><script type="text/javascript">document.write(25);</script></strong><br>
             <span class="text">Reported Traffic Incidents Today</span>
           </div>
         </div>
@@ -387,7 +370,7 @@
       </div>
       <div class="row align-center mar-bot20">
         <ul class="footer-menu">
-          <li><a href="#">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="#">About us</a></li>
           <li><a href="privacyPolicy.html">Privacy policy</a></li>
           <li><a href="#">Get in touch</a></li>
