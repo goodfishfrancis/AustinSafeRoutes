@@ -15,9 +15,9 @@ var markers = [];
 // // // Retrieve our data and plot it
 function filterData() {
      //Loop through all the markers and remove
-        for (var i = 0; i < markers.length; i++) {
-            markers[i].setMap(null);
-        }
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(null);
+    }
 
     // construct the query string
     //var url = 'https://data.austintexas.gov/resource/r3af-2r8x.json?traffic_report_status=ACTIVE';
