@@ -1,0 +1,77 @@
+[10-Feb-2019 23:51:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function ADONewConnection() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:314
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(346): getRouteNames()
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 314
+[10-Feb-2019 23:59:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function ADONewConnection() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:314
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(346): getRouteNames()
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 314
+[11-Feb-2019 00:00:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function ADONewConnection() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:314
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(346): getRouteNames()
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 314
+[11-Feb-2019 00:00:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function ADONewConnection() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:314
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(346): getRouteNames()
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 314
+[11-Feb-2019 00:01:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function ADONewConnection() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:314
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(346): getRouteNames()
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 314
+[11-Feb-2019 00:04:23 UTC] PHP Warning:  Missing argument 1 for getRouteNames(), called in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 354 and defined in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 327
+[11-Feb-2019 00:04:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:332
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(354): getRouteNames()
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 332
+[11-Feb-2019 00:05:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::MoveNext() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:351
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(356): getRouteNames(Object(mysqli))
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 351
+[11-Feb-2019 00:06:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::Next() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:351
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(356): getRouteNames(Object(mysqli))
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 351
+[11-Feb-2019 00:07:58 UTC] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 346
+[11-Feb-2019 00:10:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::MoveNext() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:351
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(356): getRouteNames(Object(mysqli))
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 351
+[11-Feb-2019 00:12:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_fetch_assoc() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:348
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(357): getRouteNames(Object(mysqli))
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 348
+[11-Feb-2019 00:13:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_fetch_array() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:348
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(357): getRouteNames(Object(mysqli))
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 348
+[11-Feb-2019 00:55:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::MoveNext() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:353
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(366): getRouteNames(Object(mysqli))
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 353
+[11-Feb-2019 00:55:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::MoveNext() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:353
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(366): getRouteNames(Object(mysqli))
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 353
+[11-Feb-2019 00:57:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::MoveNext() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:353
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(366): getRouteNames(Object(mysqli))
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 353
+[11-Feb-2019 01:07:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_fetch_array() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:349
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(378): getRouteNames(Object(mysqli))
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 349

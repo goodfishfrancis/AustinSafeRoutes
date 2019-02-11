@@ -29,6 +29,12 @@
         }
     }
     
+    function returnMapDirData($conn, $routeName)
+    {
+        $sql = "SELECT mapdir_data FROM mapdir WHERE route_name = "."'".$routeName."'";
+        $result = $conn->query($sql);
+    }
+    
     $conn = dbConnect();
 	
 	if($_REQUEST['command']=='save')
@@ -42,13 +48,14 @@
 	
 	if($_REQUEST['command']=='fetch')
 	{
-		$query = "select value from mapdir";
-		if(!($res = mysql_query($query)))die(mysql_error());		
-		$rs = mysql_fetch_array($res,1);
-		die($rs['value']);		
+// 		$query = "select value from mapdir";
+// 		if(!($res = mysql_query($query)))die(mysql_error());		
+// 		$rs = mysql_fetch_array($res,1);
+// 		die($rs['value']);	
+		returnMapDirData($conn, $routeName);
 	}
 	
-	
+	$conn->close();
 ?>
 
 
