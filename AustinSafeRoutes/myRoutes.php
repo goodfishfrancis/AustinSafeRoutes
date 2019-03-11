@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -31,6 +32,7 @@
   ======================================================= -->
   <script type="text/javascript">
     var map;
+    var ser;
     var directionsDisplay;
     var directionsService;
     var stepDisplay;
@@ -47,6 +49,22 @@
     var nextPanoId;
     var timerHandle = null;
     
+    function fetchdata()
+    {
+      
+         var routeName = document.getElementById("routeNames").value;
+        console.log(routeName);
+        var jax = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+
+        jax.open('POST','./php/process.php');
+        jax.setRequestHeader('Content-Type','application/x-www-form-urlencoded'); 
+        jax.send('command=fetch&routeName='+routeName)
+        jax.onreadystatechange = function(){ if(jax.readyState==4) {
+           try { setroute( JSON.parse(jax.responseText) ); }
+           catch(e){ console.log(e); }
+       }}
+    }
+    
     function save_waypoints()
     {
         var w=[],wp;
@@ -56,7 +74,7 @@
         var wp = rleg.via_waypoints 
         for(var i=0;i<wp.length;i++)w[i] = [wp[i].lat(),wp[i].lng()] 
         data.waypoints = w;
-         
+        console.log("hello");
         var str = JSON.stringify(data)
         var routeName = document.getElementById("routeName").value;
      
@@ -77,11 +95,11 @@
     	for(var i=0;i<os.waypoints.length;i++)
     		wp[i] = {'location': new google.maps.LatLng(os.waypoints[i][0], os.waypoints[i][1]),'stopover':false }
     		
-    	ser.route({'origin':new google.maps.LatLng(os.start.lat,os.start.lng),
+    	directionsService.route({'origin':new google.maps.LatLng(os.start.lat,os.start.lng),
     	'destination':new google.maps.LatLng(os.end.lat,os.end.lng),
     	'waypoints': wp,
     	'travelMode': google.maps.DirectionsTravelMode.DRIVING},function(res,sts) {
-    		if(sts=='OK')ren.setDirections(res);
+    		if(sts=='OK')directionsDisplay.setDirections(res);
     	})	
     }
     
@@ -250,7 +268,7 @@
             <li class="active"><a href="index.html">Home</a></li>
             <li class="active"><a href="login.html">Sign Out</a></li>
             <li class="active"><a href="saveRoutes.html">Save Routes</a></li>
-            <li class="active"><a href="myRoutes.php">My Routes</a></li>
+            <li class="active"><a href="myRoutes.html">My Routes</a></li>
             <li><a href="#section-contact">Contact</a></li>
         </ul>
       </div>
@@ -262,9 +280,9 @@
     <div class="intro-content">
       <h2>Welcome to Austin SafeRoutes!</h2>
       <h3>Save your routes and plan for your commute</h3>
-      <div>
-        <a href="#section-services" class="btn-get-started scrollto">Create Route</a>
-      </div>
+      <!--<div>-->
+      <!--  <a href="#section-services" class="btn-get-started scrollto">Create Route</a>-->
+      <!--</div>-->
     </div>
   </section>
 
@@ -277,58 +295,135 @@
 
   <!--create route-->
   <div class="container">
-    <div class="row">
-        <div class="col-lg-4 mb-4">
-            <div class="card h-100">
-                <h4 class="card-header">Create Route</h4>
-                <div class="card-body">
-                    <p class="card-text">Enter The Start and End Locations to create a route</p>
-                    <p class="card-text">Click and drag on route to modify</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-6 mb-4">
-            <div class="card h-100">
-                <h4 class="card-header">Route Addresses</h4>
-                <div class="card-body">
-                    <div class="input-group">
-                        <!-- <span class="input-group-addon"></span> -->
-                        <div id="tools">
-                            <input id="start" type="text" class="form-control mb-2" name="Start Address" placeholder="Start Address">
-                            <input id="end" type="text" class="form-control mb-2" name="End Address" placeholder="End Address">
-                            <input type= "submit" class ="btn-create-route" value="Create Route" onclick="calcRoute();"/>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="row"><br><br><br><br></div>
-    <div class="row">
-        <div class="col-lg-4 mb-4">
-            <div class="card h-100">
-                <h4 class="card-header">Save Route</h4>
-                <div class="card-body">
-                    <p class="card-text">Enter the name of the route and save</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 mb-4">
-            <div class="card h-100">
-                <h4 class="card-header">Route Name</h4>
-                <div class="input-group">
-                    <div id="tools">
+      <div class="row">
+          <div class="col-lg-4 mb-4">
+              <div class="card h-100">
+                <h3 class="card-header">My Saved Routes</h3>
+                <?php
                     
-                        <input id="routeName" type="text" class="form-control mb-2" name="Route Name" placeholder="Enter Name of Route">
-                        <input type="submit" class="btn-create-route" value="Save Route" onClick="save_waypoints()">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                    function dbConnect()
+                    {
+                    	$servername = "localhost";
+                    	$username = "asolinge_dbUser";
+                    	$password = "alexander1985";
+                    	$dbname = "asolinge_AustinSafeRoutes";
+                    
+                    	$conn = new mysqli($servername, $username, $password, $dbname);
+                    	// Check connection
+                    	if ($conn->connect_error) {
+                    	    die("Connection failed: " . $conn->connect_error);
+                    	} 
+                    
+                    	return $conn;
+                    }
+                    $conn = dbConnect();
+                    
+                    // builds a dropdown menu of saved route names
+                    function getRouteNames($conn)
+                    {
+                        
+                        
+                        $sql = "SELECT route_name FROM mapdir";
+                        // query database for the username & password
+                        $rs = $conn->query($sql);
+                        
+                        // Make sure we have results 
+                        if ($rs == false) 
+                        { 
+                            
+                            print 
+                                ' select failed \n '; 
+                        }  
+                        
+                        else
+                        {
+                        
+                            // while (!$rs->EOF) 
+                            while($row = $rs->fetch_assoc())
+                            { 
+                                // $routeName = $rs->fields['route_name']; 
+                                // print "                      <option value="."'".$row[$routeName]."'".">".$row[$routeName]."</option> \n";
+                                // $rs->MoveNext();
+                                //echo "RouteName: " . $row["route_name"] . "\n";
+                                echo "<option value="."'".$row["route_name"]."'".">".$row["route_name"]."</option> \n";
+                                // echo "\n";
+                               
+                            }
+                        }   
+                    }
+                    print
+                        "<div class='row'> \n" .
+                        "   <div class='col-xs-10 col-xs-offset-1'> \n".
+                        "       <div class='infoCard'> \n".
+                        "               <select id='routeNames'> \n";
+                         getRouteNames($conn);
+                    
+                    print
+                                 
+                        "               </select> \n" .
+                        "               <br><br> \n" .
+                        "               <input type='submit' onclick='fetchdata();'> ".
+                        "       </div> \n".
+                        "   </div> \n".
+                        "</div> \n";
+                    //getRouteNames($conn);
+                ?>
+              </div>
+          </div>
+            
+      </div>
+    <!--<div class="row">-->
+    <!--    <div class="col-lg-4 mb-4">-->
+    <!--        <div class="card h-100">-->
+    <!--            <h4 class="card-header">Create Route</h4>-->
+    <!--            <div class="card-body">-->
+    <!--                <p class="card-text">Enter The Start and End Locations to create a route</p>-->
+    <!--                <p class="card-text">Click and drag on route to modify</p>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="col-lg-6 mb-4">-->
+    <!--        <div class="card h-100">-->
+    <!--            <h4 class="card-header">Route Addresses</h4>-->
+    <!--            <div class="card-body">-->
+    <!--                <div class="input-group">-->
+                        <!-- <span class="input-group-addon"></span> -->
+    <!--                    <div id="tools">-->
+    <!--                        <input id="start" type="text" class="form-control mb-2" name="Start Address" placeholder="Start Address">-->
+    <!--                        <input id="end" type="text" class="form-control mb-2" name="End Address" placeholder="End Address">-->
+    <!--                        <input type= "submit" class ="btn-create-route" value="Create Route" onclick="calcRoute();"/>-->
+    <!--                    </div>-->
+
+    <!--                </div>-->
+    <!--            </div>-->
+
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</div>-->
+    <!--<div class="row"><br><br><br><br></div>-->
+    <!--<div class="row">-->
+    <!--    <div class="col-lg-4 mb-4">-->
+    <!--        <div class="card h-100">-->
+    <!--            <h4 class="card-header">Save Route</h4>-->
+    <!--            <div class="card-body">-->
+    <!--                <p class="card-text">Enter the name of the route and save</p>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    <div class="col-lg-6 mb-4">-->
+    <!--        <div class="card h-100">-->
+    <!--            <h4 class="card-header">Route Name</h4>-->
+    <!--            <div class="input-group">-->
+    <!--                <div id="tools">-->
+                    
+    <!--                    <input id="routeName" type="text" class="form-control mb-2" name="Route Name" placeholder="Enter Name of Route">-->
+    <!--                    <input type="submit" class="btn-create-route" value="Save Route" onClick="save_waypoints()">-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</div>-->
     <!--<div class="row">-->
     <!--    <div class="col-lg-6 mb-4">-->
     <!--        <div class="card h-100">-->
@@ -340,7 +435,7 @@
     <!--    </div>-->
     <!--</div>-->
     
-  </div>
+  </div> <!--container-->
 
   <section id="section-contact" class="section appear clearfix">
     <div class="container">
@@ -424,7 +519,7 @@
           Licensing information: https://bootstrapmade.com/license/
           Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Vlava
         -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade.com</a>
+         <a href="https://bootstrapmade.com/"></a>
       </div>
     </div>
 

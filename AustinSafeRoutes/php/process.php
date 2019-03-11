@@ -1,7 +1,7 @@
 <? ob_start(); header('Cache-Control: no-store, no-cache, must-revalidate');
-
 	$data = $_REQUEST['mapdata'];
 	$routeName = $_REQUEST['routeName'];
+
 	
 	function dbConnect()
     {
@@ -20,6 +20,7 @@
     
     function insertMapDirData($conn, $data, $routeName)
     {
+		error_log("test");
         $sql = "INSERT INTO mapdir (mapdir_data, route_name) VALUES('$data', '$routeName')";
         if (mysqli_query($conn, $sql)) {
             echo "New mapdir created successfully";
@@ -27,6 +28,23 @@
         else {
             echo "ERROR: " . $sql . "<br>" . mysqli_error($conn);
         }
+    }
+    
+    function returnMapDirData($conn, $routeName)
+    {
+		syslog(LOG_DEBUG, "SELECT mapdir_data FROM mapdir WHERE route_name = "."'".$routeName."'");
+		
+        $sql ="SELECT mapdir_data FROM mapdir WHERE route_name = "."'".$routeName."'";
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0) {
+			$row = $result->fetch_assoc();
+			
+            return $row["mapdir_data"];
+		  } else {
+			return "null";
+		  }
+		
+		
     }
     
     $conn = dbConnect();
@@ -42,21 +60,10 @@
 	
 	if($_REQUEST['command']=='fetch')
 	{
-		$query = "select value from mapdir";
-		if(!($res = mysql_query($query)))die(mysql_error());		
-		$rs = mysql_fetch_array($res,1);
-		die($rs['value']);		
+        
+   
+	  print_r(returnMapDirData($conn, $routeName));
 	}
 	
-	
+	$conn->close();
 ?>
-
-
-
-
-
-
-
-
-
-
