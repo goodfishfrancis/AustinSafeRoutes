@@ -34,8 +34,8 @@
         var OAUTHURL  =  'https://accounts.google.com/o/oauth2/auth?';
         var VALIDURL  =  'https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=';
         var SCOPE    =  'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email';
-        var CLIENTID  =  '246604600792-peh1f5ur8at3eqpasg7urvr9j1h08hn3.apps.googleusercontent.com';
-        var REDIRECT  =  'https://asolinge.create.stedwards.edu/AustinSafeRoutes/saveRoutes.html'
+        var CLIENTID  =  '22635811207-11ut90ai1t6apk5up8j3h9nklv6580ok.apps.googleusercontent.com';
+        var REDIRECT  =  'http://www.nscharol.create.stedwards.edu/senior-project/AustinSafeRoutes/login.html';
         var LOGOUT   =  'http://accounts.google.com/Logout';
         var TYPE    =  'token';
         var _url    =  OAUTHURL + 'scope=' + SCOPE + '&client_id=' + CLIENTID + '&redirect_uri=' + REDIRECT + '&response_type=' + TYPE;
@@ -79,15 +79,32 @@
                 dataType: "jsonp"  
             });
         }
+        var url = 'https://www.googleapis.com/plus/v1/people/me?access_token={access_token}';
 
+ $.ajax({
+   type: 'GET',
+   url: url,
+   async: false,
+   success: function(userInfo) {
+     //info about user
+     console.log(userInfo);
+     console.log('test');
+   },
+   error: function(e) {
+     console.log('error');
+
+   }
+ });
         function getUserInfo() {
             $.ajax({
                 url: 'https://www.googleapis.com/oauth2/v1/userinfo?access_token=' + acToken,
                 data: null,
                 success: function(resp) {
                     user    =   resp;
-                    console.log(user);
+                   
+                    console.log(user);    
                     $('#uName').text('Welcome ' + user.name);
+                
                     $('#imgHolder').attr('src', user.picture);
                 },
                 dataType: "jsonp"
@@ -157,7 +174,7 @@
       	  <span class="fa fa-bars color-white"></span>
         </button>
         <div class="navbar-logo">
-          <a href="index.html">Austin Safe Routes</a>
+          <a href="index.html">LOGO GOES HERE</a>
         </div>
       </div>
       <div class="navbar-collapse collapse">
