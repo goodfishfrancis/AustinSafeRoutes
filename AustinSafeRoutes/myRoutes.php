@@ -154,7 +154,7 @@
         // Create a renderer for directions and bind it to the map.
         var rendererOptions = {
             map: map,
-            draggable: true
+            //draggable: true
         }
         directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
         
@@ -266,8 +266,8 @@
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
             <li class="active"><a href="index.html">Home</a></li>
-            <li class="active"><a href="login.html">Sign Out</a></li>
-            <li class="active"><a href="saveRoutes.html">Save Routes</a></li>
+            <li class="active"><a href="login.php">Sign Out</a></li>
+            <li class="active"><a href="saveRoutes.php">Save Routes</a></li>
             <li class="active"><a href="myRoutes.html">My Routes</a></li>
             <li><a href="#section-contact">Contact</a></li>
         </ul>
