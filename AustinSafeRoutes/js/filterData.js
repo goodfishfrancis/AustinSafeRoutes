@@ -8,20 +8,20 @@ function filterData() {
     var incidentStatus = document.getElementById("incidentStatus").value;
     var incidentType = document.getElementById("incidentType").value;
     if (incidentType == "") {
-    url = endPoint + "traffic_report_status=" + incidentStatus;
+        url = endPoint + "traffic_report_status=" + incidentStatus;
     }
     else {
-    url = endPoint + "traffic_report_status=" + incidentStatus + "&" + "issue_reported=" + incidentType;
+        url = endPoint + "traffic_report_status=" + incidentStatus + "&" + "issue_reported=" + incidentType;
     }
     // build map
     var map;
     var myLatLng = {lat: 30.4001631, lng: -97.68025269999998};
     function initMap() {
-    var options = {
-        zoom:10,
-        center: myLatLng
-    }
-    map = new google.maps.Map(document.getElementById('map'), options);
+        var options = {
+            zoom:10,
+            center: myLatLng
+        }
+        map = new google.maps.Map(document.getElementById('map'), options);
 
     }
 
