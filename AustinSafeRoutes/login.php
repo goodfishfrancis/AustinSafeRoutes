@@ -1,4 +1,23 @@
+<?php
+    require_once "facebookConfig.php";
+    
+    if (isset($_SESSION['access_token'])) {
+        header('Location: saveRoutes.php');
+        exit();
+    }
+    
+    // set page to redirect user to when they log in
+    // login should redirect user to saveRoutes.php
+    $redirectURL = "https://asolinge.create.stedwards.edu/AustinSafeRoutes/fb-redirect.php";
+    
+    // permissions are data that we have access through via facebook login
+    // we only need access to email
+    $permissions = ['email'];
+    
+    
+    $loginURL = $helper->getLoginUrl($redirectURL, $permissions);
 
+?>
 <!DOCTYPE html>
 <html>
 
@@ -120,36 +139,7 @@
 </head>
 
 <body>
-  <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '338918216884566',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v3.2'
-    });
-      
-    FB.AppEvents.logPageView();   
-      
-  };
-
-  (function(d, s, id){
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {return;}
-    js = d.createElement(s); js.id = id;
-    js.src = "https://connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-  </script>
-  <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=338918216884566&autoLogAppEvents=1';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-  </script>
+  
   <section id="header" class="appear"></section>
   <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(5, 42, 62, 1);">
     <div class="container">
@@ -187,7 +177,9 @@
     <div class="container">
       <div class="row">
           <div class="col-md-offset-5">
-            <div class="fb-login-button" data-max-rows="2" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+              <form>
+                  <input type="button" onclick="window.location = '<?php echo $loginURL ?>';" value="Log In With Facebook" class="btn btn-primary">
+              </form>
           </div>
       </div>
     </div>

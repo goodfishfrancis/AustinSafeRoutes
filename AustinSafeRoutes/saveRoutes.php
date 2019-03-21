@@ -1,3 +1,16 @@
+<?php
+    session_start();
+    
+    // if user is not logged in, redirect to login page
+    if (!isset($_SESSION['access_token'])) {
+        //header('Location: login.php');
+        echo "<script>alert('Please Login To Continue');</script>";
+        echo "<script>location.href='https://asolinge.create.stedwards.edu/AustinSafeRoutes/login.php';</script>";
+        exit();
+    }
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -252,6 +265,7 @@
             <li class="active"><a href="saveRoutes.html">Save Routes</a></li>
             <li class="active"><a href="myRoutes.php">My Routes</a></li>
             <li><a href="#section-contact">Contact</a></li>
+            <li class="active"><img src="<?php echo $_SESSION['userData']['picture']['url'] ?>"></li>
         </ul>
       </div>
       <!--/.navbar-collapse -->
