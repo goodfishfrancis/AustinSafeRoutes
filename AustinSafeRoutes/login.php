@@ -1,10 +1,11 @@
 <?php
+    session_start();
     require_once "facebookConfig.php";
     
-    if (isset($_SESSION['access_token'])) {
-        header('Location: saveRoutes.php');
-        exit();
-    }
+    // if (isset($_SESSION['access_token'])) {
+    //     header('Location: saveRoutes.php');
+    //     exit();
+    // }
     
     // set page to redirect user to when they log in
     // login should redirect user to saveRoutes.php
@@ -14,8 +15,22 @@
     // we only need access to email
     $permissions = ['email'];
     
-    
+    // loginURL will be called when facebook login button is clicked
     $loginURL = $helper->getLoginUrl($redirectURL, $permissions);
+    
+    // if facebook logout button is clicked, 
+    // post request for facebookLogout is submitted
+    // log user out of facebook and clear session data
+    if(isset($_POST['facebookLogout'])){
+        $fbLogoutUrl = $helper->getLogoutUrl($_SESSION['access_token'], "https://asolinge.create.stedwards.edu/AustinSafeRoutes");    
+        $_SESSION = array();    //clear session array
+        session_destroy();
+        header("Location: $fbLogoutUrl");
+        exit();
+    }
+
+    
+    
 
 ?>
 <!DOCTYPE html>
@@ -191,6 +206,15 @@
             <iframe name='myIFrame' id="myIFrame" style='display:none'></iframe>
             <div id='uName'></div>
             <img src='' id='imgHolder'/>
+          </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+          <div class="col-md-offset-5">
+              <form method="post">
+                  <input type="submit" name="facebookLogout" value="Facebook Log Out" class="btn btn-primary">
+              </form>
           </div>
       </div>
     </div>
