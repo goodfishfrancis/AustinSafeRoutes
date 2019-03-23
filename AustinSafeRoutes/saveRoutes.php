@@ -262,9 +262,11 @@
         <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
             <li class="active"><a href="index.html">Home</a></li>
             <li class="active"><a href="login.php">Sign Out</a></li>
-            <li class="active"><a href="saveRoutes.html">Save Routes</a></li>
+            <li class="active"><a href="saveRoutes.php">Save Routes</a></li>
             <li class="active"><a href="myRoutes.php">My Routes</a></li>
             <li><a href="#section-contact">Contact</a></li>
+            
+            <!--get picture from facebook user data-->
             <li class="active"><img src="<?php echo $_SESSION['userData']['picture']['url'] ?>"></li>
         </ul>
       </div>
