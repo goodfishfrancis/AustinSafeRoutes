@@ -1,0 +1,335 @@
+[10-Feb-2019 23:51:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function ADONewConnection() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:314
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(346): getRouteNames()
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 314
+[10-Feb-2019 23:59:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function ADONewConnection() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:314
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(346): getRouteNames()
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 314
+[11-Feb-2019 00:00:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function ADONewConnection() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:314
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(346): getRouteNames()
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 314
+[11-Feb-2019 00:00:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function ADONewConnection() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:314
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(346): getRouteNames()
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 314
+[11-Feb-2019 00:01:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function ADONewConnection() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:314
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(346): getRouteNames()
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 314
+[11-Feb-2019 00:04:23 UTC] PHP Warning:  Missing argument 1 for getRouteNames(), called in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 354 and defined in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 327
+[11-Feb-2019 00:04:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:332
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(354): getRouteNames()
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 332
+[11-Feb-2019 00:05:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::MoveNext() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:351
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(356): getRouteNames(Object(mysqli))
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 351
+[11-Feb-2019 00:06:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::Next() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:351
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(356): getRouteNames(Object(mysqli))
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 351
+[11-Feb-2019 00:07:58 UTC] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 346
+[11-Feb-2019 00:10:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::MoveNext() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:351
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(356): getRouteNames(Object(mysqli))
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 351
+[11-Feb-2019 00:12:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_fetch_assoc() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:348
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(357): getRouteNames(Object(mysqli))
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 348
+[11-Feb-2019 00:13:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_fetch_array() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:348
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(357): getRouteNames(Object(mysqli))
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 348
+[11-Feb-2019 00:55:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::MoveNext() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:353
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(366): getRouteNames(Object(mysqli))
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 353
+[11-Feb-2019 00:55:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::MoveNext() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:353
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(366): getRouteNames(Object(mysqli))
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 353
+[11-Feb-2019 00:57:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::MoveNext() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:353
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(366): getRouteNames(Object(mysqli))
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 353
+[11-Feb-2019 01:07:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_fetch_array() in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:349
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php(378): getRouteNames(Object(mysqli))
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 349
+[18-Feb-2019 04:49:24 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 423
+[18-Feb-2019 04:51:08 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 420
+[20-Mar-2019 20:45:05 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getRedirectLoginHelper() on null in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php on line 4
+[20-Mar-2019 20:45:24 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getOAuth2Client() on null in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php:37
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php on line 37
+[20-Mar-2019 20:48:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getOAuth2Client() on null in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php:37
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php on line 37
+[20-Mar-2019 22:28:56 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getOAuth2Client() on null in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php on line 26
+[20-Mar-2019 22:31:18 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getOAuth2Client() on null in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php on line 26
+[20-Mar-2019 22:31:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getOAuth2Client() on null in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php on line 26
+[20-Mar-2019 22:36:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getOAuth2Client() on null in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php on line 27
+[20-Mar-2019 22:42:38 UTC] PHP Warning:  require_once(Facebook\Authentication\OAuth2Client): failed to open stream: No such file or directory in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php on line 3
+[20-Mar-2019 22:42:38 UTC] PHP Fatal error:  require_once(): Failed opening required 'Facebook\Authentication\OAuth2Client' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php on line 3
+[20-Mar-2019 22:43:31 UTC] PHP Warning:  require_once(acebookConfig.php): failed to open stream: No such file or directory in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php on line 2
+[20-Mar-2019 22:43:31 UTC] PHP Fatal error:  require_once(): Failed opening required 'acebookConfig.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php on line 2
+[20-Mar-2019 22:44:45 UTC] PHP Warning:  require_once(Facebook/Authentication/OAuth2Client): failed to open stream: No such file or directory in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php on line 3
+[20-Mar-2019 22:44:45 UTC] PHP Fatal error:  require_once(): Failed opening required 'Facebook/Authentication/OAuth2Client' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php on line 3
+[20-Mar-2019 22:46:16 UTC] PHP Warning:  require_once(/Facebook/Authentication/OAuth2Client): failed to open stream: No such file or directory in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php on line 3
+[20-Mar-2019 22:46:16 UTC] PHP Fatal error:  require_once(): Failed opening required '/Facebook/Authentication/OAuth2Client' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php on line 3
+[20-Mar-2019 22:47:00 UTC] PHP Warning:  require_once(Facebook/Authentication/OAuth2Client): failed to open stream: No such file or directory in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php on line 3
+[20-Mar-2019 22:47:00 UTC] PHP Fatal error:  require_once(): Failed opening required 'Facebook/Authentication/OAuth2Client' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php on line 3
+[20-Mar-2019 22:50:38 UTC] PHP Warning:  require_once(Facebook/Authentication/OAuth2Client): failed to open stream: No such file or directory in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php on line 3
+[20-Mar-2019 22:50:38 UTC] PHP Fatal error:  require_once(): Failed opening required 'Facebook/Authentication/OAuth2Client' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php on line 3
+[20-Mar-2019 22:51:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getOAuth2Client() on null in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php on line 26
+[20-Mar-2019 22:54:40 UTC] PHP Fatal error:  Uncaught Facebook\Exceptions\FacebookSDKException: Access token metadata contains unexpected app ID. in /home/asolinge/public_html/AustinSafeRoutes/Facebook/Authentication/AccessTokenMetadata.php:329
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php(34): Facebook\Authentication\AccessTokenMetadata->validateAppId('{app-id}')
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/Facebook/Authentication/AccessTokenMetadata.php on line 329
+[20-Mar-2019 23:01:13 UTC] PHP Fatal error:  Uncaught Facebook\Exceptions\FacebookSDKException: You must provide an access token. in /home/asolinge/public_html/AustinSafeRoutes/Facebook/FacebookRequest.php:209
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/Facebook/FacebookClient.php(201): Facebook\FacebookRequest->validateAccessToken()
+#1 /home/asolinge/public_html/AustinSafeRoutes/Facebook/Facebook.php(469): Facebook\FacebookClient->sendRequest(Object(Facebook\FacebookRequest))
+#2 /home/asolinge/public_html/AustinSafeRoutes/Facebook/Facebook.php(341): Facebook\Facebook->sendRequest('GET', '/me?fields=id, ...', Array, NULL, NULL, 'v2.10')
+#3 /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php(51): Facebook\Facebook->get('/me?fields=id, ...')
+#4 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/Facebook/FacebookRequest.php on line 209
+[20-Mar-2019 23:06:18 UTC] PHP Fatal error:  Uncaught Facebook\Exceptions\FacebookSDKException: You must provide an access token. in /home/asolinge/public_html/AustinSafeRoutes/Facebook/FacebookRequest.php:209
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/Facebook/FacebookClient.php(201): Facebook\FacebookRequest->validateAccessToken()
+#1 /home/asolinge/public_html/AustinSafeRoutes/Facebook/Facebook.php(469): Facebook\FacebookClient->sendRequest(Object(Facebook\FacebookRequest))
+#2 /home/asolinge/public_html/AustinSafeRoutes/Facebook/Facebook.php(341): Facebook\Facebook->sendRequest('GET', '/me?fields=id, ...', Array, NULL, NULL, 'v2.10')
+#3 /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php(51): Facebook\Facebook->get('/me?fields=id, ...')
+#4 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/Facebook/FacebookRequest.php on line 209
+[20-Mar-2019 23:07:21 UTC] PHP Fatal error:  Uncaught Facebook\Exceptions\FacebookSDKException: You must provide an access token. in /home/asolinge/public_html/AustinSafeRoutes/Facebook/FacebookRequest.php:209
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/Facebook/FacebookClient.php(201): Facebook\FacebookRequest->validateAccessToken()
+#1 /home/asolinge/public_html/AustinSafeRoutes/Facebook/Facebook.php(469): Facebook\FacebookClient->sendRequest(Object(Facebook\FacebookRequest))
+#2 /home/asolinge/public_html/AustinSafeRoutes/Facebook/Facebook.php(341): Facebook\Facebook->sendRequest('GET', '/me?fields=id, ...', Array, NULL, NULL, 'v2.10')
+#3 /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php(51): Facebook\Facebook->get('/me?fields=id, ...')
+#4 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/Facebook/FacebookRequest.php on line 209
+[20-Mar-2019 23:15:56 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php:22) in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php on line 58
+[20-Mar-2019 23:22:14 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php:22) in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php on line 58
+[20-Mar-2019 23:23:56 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php:22) in /home/asolinge/public_html/AustinSafeRoutes/fb-redirect.php on line 60
+[20-Mar-2019 23:53:02 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php:5) in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php on line 6
+[23-Mar-2019 00:22:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Facebook\Facebook::logout() in /home/asolinge/public_html/AustinSafeRoutes/login.php:201
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/login.php on line 201
+[23-Mar-2019 00:23:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Facebook\Facebook::logout() in /home/asolinge/public_html/AustinSafeRoutes/login.php:201
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/login.php on line 201
+[23-Mar-2019 00:23:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Facebook\Facebook::logout() in /home/asolinge/public_html/AustinSafeRoutes/login.php:201
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/login.php on line 201
+[23-Mar-2019 00:23:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Facebook\Facebook::logout() in /home/asolinge/public_html/AustinSafeRoutes/login.php:201
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/login.php on line 201
+[23-Mar-2019 17:17:21 UTC] PHP Warning:  require_once(facebookConfigphp): failed to open stream: No such file or directory in /home/asolinge/public_html/AustinSafeRoutes/facebookLogout.php on line 3
+[23-Mar-2019 17:17:21 UTC] PHP Fatal error:  require_once(): Failed opening required 'facebookConfigphp' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/asolinge/public_html/AustinSafeRoutes/facebookLogout.php on line 3
+[23-Mar-2019 17:18:01 UTC] PHP Warning:  require_once(facebookConfigphp): failed to open stream: No such file or directory in /home/asolinge/public_html/AustinSafeRoutes/facebookLogout.php on line 3
+[23-Mar-2019 17:18:01 UTC] PHP Fatal error:  require_once(): Failed opening required 'facebookConfigphp' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/asolinge/public_html/AustinSafeRoutes/facebookLogout.php on line 3
+[23-Mar-2019 17:18:57 UTC] PHP Warning:  require_once(facebookConfigphp): failed to open stream: No such file or directory in /home/asolinge/public_html/AustinSafeRoutes/facebookLogout.php on line 3
+[23-Mar-2019 17:18:57 UTC] PHP Fatal error:  require_once(): Failed opening required 'facebookConfigphp' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/asolinge/public_html/AustinSafeRoutes/facebookLogout.php on line 3
+[23-Mar-2019 17:21:27 UTC] PHP Warning:  require_once(facebookConfigphp): failed to open stream: No such file or directory in /home/asolinge/public_html/AustinSafeRoutes/facebookLogout.php on line 3
+[23-Mar-2019 17:21:27 UTC] PHP Fatal error:  require_once(): Failed opening required 'facebookConfigphp' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/asolinge/public_html/AustinSafeRoutes/facebookLogout.php on line 3
+[23-Mar-2019 17:23:43 UTC] PHP Warning:  require_once(facebookConfigphp): failed to open stream: No such file or directory in /home/asolinge/public_html/AustinSafeRoutes/facebookLogout.php on line 3
+[23-Mar-2019 17:23:43 UTC] PHP Fatal error:  require_once(): Failed opening required 'facebookConfigphp' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/asolinge/public_html/AustinSafeRoutes/facebookLogout.php on line 3
+[23-Mar-2019 17:24:42 UTC] PHP Warning:  require_once(facebookConfigphp): failed to open stream: No such file or directory in /home/asolinge/public_html/AustinSafeRoutes/facebookLogout.php on line 3
+[23-Mar-2019 17:24:42 UTC] PHP Fatal error:  require_once(): Failed opening required 'facebookConfigphp' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/asolinge/public_html/AustinSafeRoutes/facebookLogout.php on line 3
+[23-Mar-2019 17:31:05 UTC] PHP Warning:  require_once(facebookConfigphp): failed to open stream: No such file or directory in /home/asolinge/public_html/AustinSafeRoutes/facebookLogout.php on line 3
+[23-Mar-2019 17:31:05 UTC] PHP Fatal error:  require_once(): Failed opening required 'facebookConfigphp' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/asolinge/public_html/AustinSafeRoutes/facebookLogout.php on line 3
+[23-Mar-2019 17:43:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function session_destory() in /home/asolinge/public_html/AustinSafeRoutes/login.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/login.php on line 25
+[23-Mar-2019 17:45:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Facebook\Facebook::destroySession() in /home/asolinge/public_html/AustinSafeRoutes/login.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/login.php on line 26
+[23-Mar-2019 17:46:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Facebook\Facebook::destroySession() in /home/asolinge/public_html/AustinSafeRoutes/login.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/login.php on line 24
+[23-Mar-2019 23:37:04 UTC] PHP Warning:  require_once(google-api-php-client/vendor/autoload.php): failed to open stream: No such file or directory in /home/asolinge/public_html/AustinSafeRoutes/googleConfig.php on line 3
+[23-Mar-2019 23:37:04 UTC] PHP Fatal error:  require_once(): Failed opening required 'google-api-php-client/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/asolinge/public_html/AustinSafeRoutes/googleConfig.php on line 3
+[23-Mar-2019 23:39:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function setApplicationName() on null in /home/asolinge/public_html/AustinSafeRoutes/googleConfig.php:8
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/login.php(4): require_once()
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/googleConfig.php on line 8
+[23-Mar-2019 23:55:41 UTC] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/asolinge/public_html/AustinSafeRoutes/google-redirect.php on line 4
+[23-Mar-2019 23:56:21 UTC] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/asolinge/public_html/AustinSafeRoutes/google-redirect.php on line 4
+[23-Mar-2019 23:59:17 UTC] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/asolinge/public_html/AustinSafeRoutes/google-redirect.php on line 4
+[24-Mar-2019 00:00:22 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/asolinge/public_html/AustinSafeRoutes/google-redirect.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/google-redirect.php on line 5
+[24-Mar-2019 00:00:23 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/asolinge/public_html/AustinSafeRoutes/google-redirect.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/google-redirect.php on line 5
+[24-Mar-2019 00:08:32 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/asolinge/public_html/AustinSafeRoutes/google-redirect.php:12) in /home/asolinge/public_html/AustinSafeRoutes/google-redirect.php on line 17
+[24-Mar-2019 00:08:57 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/asolinge/public_html/AustinSafeRoutes/google-redirect.php:13) in /home/asolinge/public_html/AustinSafeRoutes/google-redirect.php on line 17
+[24-Mar-2019 00:09:12 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type __PHP_Incomplete_Class as array in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php:270
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php on line 270
+[24-Mar-2019 00:09:24 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type __PHP_Incomplete_Class as array in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php:270
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php on line 270
+[24-Mar-2019 00:09:50 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type __PHP_Incomplete_Class as array in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php:270
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php on line 270
+[24-Mar-2019 00:12:13 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type __PHP_Incomplete_Class as array in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php:270
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php on line 270
+[24-Mar-2019 00:12:18 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type __PHP_Incomplete_Class as array in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php:270
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php on line 270
+[24-Mar-2019 00:14:00 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type __PHP_Incomplete_Class as array in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php:270
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php on line 270
+[24-Mar-2019 00:14:05 UTC] PHP Warning:  strpos() expects parameter 1 to be string, array given in /home/asolinge/public_html/AustinSafeRoutes/Facebook/Authentication/AccessToken.php on line 90
+[24-Mar-2019 00:14:05 UTC] PHP Fatal error:  Uncaught Facebook\Exceptions\FacebookSDKException: Cannot generate a logout URL with an app access token. in /home/asolinge/public_html/AustinSafeRoutes/Facebook/Helpers/FacebookRedirectLoginHelper.php:163
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/login.php(29): Facebook\Helpers\FacebookRedirectLoginHelper->getLogoutUrl(Object(Facebook\Authentication\AccessToken), 'https://asoling...')
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/Facebook/Helpers/FacebookRedirectLoginHelper.php on line 163
+[24-Mar-2019 00:14:21 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type __PHP_Incomplete_Class as array in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php:270
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php on line 270
+[24-Mar-2019 00:15:02 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type __PHP_Incomplete_Class as array in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php:270
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php on line 270
+[24-Mar-2019 00:15:26 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type __PHP_Incomplete_Class as array in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php:270
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php on line 270
+[24-Mar-2019 00:16:20 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type __PHP_Incomplete_Class as array in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php:270
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php on line 270
+[24-Mar-2019 00:20:17 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type __PHP_Incomplete_Class as array in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php:270
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php on line 270
+[24-Mar-2019 00:22:15 UTC] PHP Fatal error:  Uncaught Google_Service_Exception: {
+  "error": {
+    "code": 401,
+    "message": "Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+    "errors": [
+      {
+        "message": "Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+        "domain": "global",
+        "reason": "unauthorized"
+      }
+    ],
+    "status": "UNAUTHENTICATED"
+  }
+}
+ in /home/asolinge/public_html/AustinSafeRoutes/google-api-php-client-2.2.2/src/Google/Http/REST.php:118
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/google-api-php-client-2.2.2/src/Google/Http/REST.php(94): Google_Http_REST::decodeHttpResponse(Object(GuzzleHttp\Psr7\Response), Object(GuzzleHttp\Psr7\Request), 'Google_Service_...' in /home/asolinge/public_html/AustinSafeRoutes/google-api-php-client-2.2.2/src/Google/Http/REST.php on line 118
+[24-Mar-2019 00:25:00 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type __PHP_Incomplete_Class as array in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php:270
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php on line 270
+[24-Mar-2019 00:35:55 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type __PHP_Incomplete_Class as array in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php:270
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php on line 270
+[24-Mar-2019 00:36:37 UTC] PHP Warning:  strpos() expects parameter 1 to be string, array given in /home/asolinge/public_html/AustinSafeRoutes/Facebook/Authentication/AccessToken.php on line 90
+[24-Mar-2019 00:36:37 UTC] PHP Fatal error:  Uncaught Facebook\Exceptions\FacebookSDKException: Cannot generate a logout URL with an app access token. in /home/asolinge/public_html/AustinSafeRoutes/Facebook/Helpers/FacebookRedirectLoginHelper.php:163
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/login.php(29): Facebook\Helpers\FacebookRedirectLoginHelper->getLogoutUrl(Object(Facebook\Authentication\AccessToken), 'https://asoling...')
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/Facebook/Helpers/FacebookRedirectLoginHelper.php on line 163
+[24-Mar-2019 00:36:42 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type __PHP_Incomplete_Class as array in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php:270
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php on line 270
+[24-Mar-2019 00:56:41 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type __PHP_Incomplete_Class as array in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php:270
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php on line 270
+[24-Mar-2019 01:44:07 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type __PHP_Incomplete_Class as array in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php:270
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php on line 270
+[24-Mar-2019 01:50:55 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type __PHP_Incomplete_Class as array in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php:270
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php on line 270
+[24-Mar-2019 01:52:28 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type __PHP_Incomplete_Class as array in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php:270
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/saveRoutes.php on line 270
+[24-Mar-2019 01:56:42 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type __PHP_Incomplete_Class as array in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php:279
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/myRoutes.php on line 279
+[24-Mar-2019 02:09:45 UTC] PHP Warning:  strpos() expects parameter 1 to be string, array given in /home/asolinge/public_html/AustinSafeRoutes/Facebook/Authentication/AccessToken.php on line 90
+[24-Mar-2019 02:09:45 UTC] PHP Fatal error:  Uncaught Facebook\Exceptions\FacebookSDKException: Cannot generate a logout URL with an app access token. in /home/asolinge/public_html/AustinSafeRoutes/Facebook/Helpers/FacebookRedirectLoginHelper.php:163
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/login.php(29): Facebook\Helpers\FacebookRedirectLoginHelper->getLogoutUrl(Object(Facebook\Authentication\AccessToken), 'https://asoling...')
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/Facebook/Helpers/FacebookRedirectLoginHelper.php on line 163
+[24-Mar-2019 02:27:39 UTC] PHP Warning:  strpos() expects parameter 1 to be string, array given in /home/asolinge/public_html/AustinSafeRoutes/Facebook/Authentication/AccessToken.php on line 90
+[24-Mar-2019 02:27:39 UTC] PHP Fatal error:  Uncaught Facebook\Exceptions\FacebookSDKException: Cannot generate a logout URL with an app access token. in /home/asolinge/public_html/AustinSafeRoutes/Facebook/Helpers/FacebookRedirectLoginHelper.php:163
+Stack trace:
+#0 /home/asolinge/public_html/AustinSafeRoutes/login.php(36): Facebook\Helpers\FacebookRedirectLoginHelper->getLogoutUrl(Object(Facebook\Authentication\AccessToken), 'https://asoling...')
+#1 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/Facebook/Helpers/FacebookRedirectLoginHelper.php on line 163
