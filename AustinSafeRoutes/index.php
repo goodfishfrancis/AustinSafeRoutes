@@ -1,4 +1,6 @@
-
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -39,36 +41,6 @@
 </head>
 
 <body onload="initMap(); filterData();">
-  <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '338918216884566',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v3.2'
-    });
-      
-    FB.AppEvents.logPageView();   
-      
-  };
-
-  (function(d, s, id){
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {return;}
-    js = d.createElement(s); js.id = id;
-    js.src = "https://connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-  </script>
-  <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=338918216884566&autoLogAppEvents=1';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-  </script>
   
   <section id="header" class="appear"></section>
   <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(5, 42, 62, 1);">
@@ -78,16 +50,31 @@
       	  <span class="fa fa-bars color-white"></span>
         </button>
         <div class="navbar-logo">
-          <a href="index.html">Austin Safe Routes</a>
+          <a href="index.php">Austin Safe Routes</a>
         </div>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
-          <li class="active"><a href="index.html">Home</a></li>
+          <li class="active"><a href="index.php">Home</a></li>
           <li><a href="#section-about">About</a></li>
-          <li class="active"><a href="login.php">Sign In</a></li>
+          <?php  
+            // if user is not logged in, display 'Log In'
+            if (!isset($_SESSION['access_token'])) {
+                echo "<li class='active'><a href='login.php'>Log In</a>";
+            }
+            else { //display 'Log Out'
+                echo "<li class='active'><a href='login.php'>Log Out</a>";
+            }
+          ?>
           <li class="active"><a href="saveRoutes.php">Save Routes</a></li>
+          <li class="active"><a href="myRoutes.php">My Routes</a></li>
           <li><a href="#section-contact">Contact</a></li>
+          <?php  
+            // if user is logged in, display user picture
+            if (isset($_SESSION['access_token'])) {
+                echo "<li class='active'><img src=". $_SESSION['userPicture']." width='50' height='50'></li>";
+            }
+          ?>
         </ul>
       </div>
       <!--/.navbar-collapse -->
@@ -371,7 +358,7 @@
       </div>
       <div class="row align-center mar-bot20">
         <ul class="footer-menu">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li><a href="#">About us</a></li>
           <li><a href="privacyPolicy.html">Privacy policy</a></li>
           <li><a href="#">Get in touch</a></li>
@@ -410,7 +397,6 @@
   <script src="js/stellar.js"></script>
   <script src="js/jquery.appear.js"></script>
   <script src="js/jquery.flexslider-min.js"></script>
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8HeI8o-c1NppZA-92oYlXakhDPYR7XMY"></script> -->
 
   <!-- Contact Form JavaScript File -->
   <script src="contactform/contactform.js"></script>

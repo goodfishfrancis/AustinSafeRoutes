@@ -57,6 +57,8 @@
     // save necessary data to session
     // and redirect user to saveRoutes.php
     $_SESSION['userData'] = $userData;
+    $_SESSION['userID'] = $userData['id'];
+    $_SESSION['email'] = $userData['email'];
     $_SESSION['access_token'] = (string) $accessToken;
     $_SESSION['userPicture'] = $userData['picture']['url'];
     $_SESSION['facebookLoggedIn'] = 1;

@@ -1,6 +1,9 @@
 <? ob_start(); header('Cache-Control: no-store, no-cache, must-revalidate');
+    
 	$data = $_REQUEST['mapdata'];
 	$routeName = $_REQUEST['routeName'];
+// 	$userPhone = $_REQUEST['userPhone'];
+	$userEmail = $_REQUEST['userEmail'];
 
 	
 	function dbConnect()
@@ -18,10 +21,10 @@
     	return $conn;
     }
     
-    function insertMapDirData($conn, $data, $routeName)
+    function insertMapDirData($conn, $data, $routeName, $userEmail)
     {
 		error_log("test");
-        $sql = "INSERT INTO mapdir (mapdir_data, route_name) VALUES('$data', '$routeName')";
+        $sql = "INSERT INTO mapdir (mapdir_data, route_name, email) VALUES('$data', '$routeName', '$userEmail')";
         if (mysqli_query($conn, $sql)) {
             echo "New mapdir created successfully";
         }
@@ -55,7 +58,7 @@
 // 		$query = "INSERT INTO mapdir (mapdir_data) VALUES('$data')";
 // 		if(mysql_query($query))die('bien');
 // 		die(mysql_error());
-        insertMapDirData($conn, $data, $routeName);
+        insertMapDirData($conn, $data, $routeName, $userEmail);
 	}
 	
 	if($_REQUEST['command']=='fetch')

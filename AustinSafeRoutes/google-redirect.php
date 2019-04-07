@@ -14,7 +14,12 @@
     
     $_SESSION['userData'] = $userData;
     $_SESSION['userPicture'] = $userData['picture'];
+    $_SESSION['userID'] = $userData['id'];
+    $_SESSION['email'] = $userData['email'];
     $_SESSION['googleLoggedIn'] = 1;
+    
+    // echo "<pre>";
+    // echo $_SESSION['userID'];
     
     header('Location: saveRoutes.php');
     exit();

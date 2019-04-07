@@ -1,8 +1,77 @@
 <?php
+    session_start();
+    
+    function dbConnect()
+    {
+    	$servername = "localhost";
+    	$username = "asolinge_dbUser";
+    	$password = "alexander1985";
+    	$dbname = "asolinge_AustinSafeRoutes";
+    
+    	$conn = new mysqli($servername, $username, $password, $dbname);
+    	// Check connection
+    	if ($conn->connect_error) {
+    	    die("Connection failed: " . $conn->connect_error);
+    	} 
+    	return $conn;
+    }
+    
+    
+        
+    
+    function returnMapDirData($conn)
+    {
+		
+        $sql = "SELECT * FROM mapdir";
+        // query database for the username & password
+        $rs = $conn->query($sql);
+        
+        // Make sure we have results 
+        if ($rs == false) 
+        { 
+            
+            print 
+                ' select failed \n '; 
+        }  
+        
+        else
+        {
+            return $rs;
+            
+        } 
+        
+    }
     
     // logic called when send notification button is pushed
     if(isset($_POST['sendNotifications'])){
-        // send notification logic/function call/script call
+        $conn = dbConnect();
+        
+        $result = returnMapDirData($conn);
+        
+        // while (!$rs->EOF) 
+        while($row = $result->fetch_assoc())
+        { 
+             $routeName = $row['route_name']; 
+             $email = $row['email'];
+             // $rs->MoveNext();
+             //echo "RouteName: " . $row["route_name"] . "\n";
+             //echo "route name: ". $row["route_name"]. ", email: ". $row['email'] . "\n";
+             // echo "\n";
+           
+            // send notification logic/function call/script call
+            // the message
+            $msg = "There is a traffic incident on your route, ". $routeName . "\n";
+            
+            
+            // use wordwrap() if lines are longer than 70 characters
+            $msg = wordwrap($msg,70);
+        
+            // send email
+            mail($email,"My subject",$msg);
+        }
+        
+        
+        
     }
 
     
@@ -41,91 +110,6 @@
     Author: BootstrapMade.com
     Author URL: https://bootstrapmade.com
   ======================================================= -->
-  <script>
-        var OAUTHURL  =  'https://accounts.google.com/o/oauth2/auth?';
-        var VALIDURL  =  'https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=';
-        var SCOPE    =  'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email';
-        var CLIENTID  =  '246604600792-peh1f5ur8at3eqpasg7urvr9j1h08hn3.apps.googleusercontent.com';
-        var REDIRECT  =  'https://asolinge.create.stedwards.edu/AustinSafeRoutes/saveRoutes.html'
-        var LOGOUT   =  'http://accounts.google.com/Logout';
-        var TYPE    =  'token';
-        var _url    =  OAUTHURL + 'scope=' + SCOPE + '&client_id=' + CLIENTID + '&redirect_uri=' + REDIRECT + '&response_type=' + TYPE;
-        var acToken;
-        var tokenType;
-        var expiresIn;
-        var user;
-        var loggedIn  =  false;
-
-        function login() {
-            var win         =   window.open(_url, "windowname1", 'width=800, height=600'); 
-
-            var pollTimer   =   window.setInterval(function() { 
-                try {
-                    console.log(win.document.URL);
-                    if (win.document.URL.indexOf(REDIRECT) != -1) {
-                        window.clearInterval(pollTimer);
-                        var url =   win.document.URL;
-                        acToken =   gup(url, 'access_token');
-                        tokenType = gup(url, 'token_type');
-                        expiresIn = gup(url, 'expires_in');
-                        win.close();
-
-                        validateToken(acToken);
-                    }
-                } catch(e) {
-                }
-            }, 500);
-        }
-
-        function validateToken(token) {
-            $.ajax({
-                url: VALIDURL + token,
-                data: null,
-                success: function(responseText){  
-                    getUserInfo();
-                    loggedIn = true;
-                    $('#loginText').hide();
-                    $('#logoutText').show();
-                },  
-                dataType: "jsonp"  
-            });
-        }
-
-        function getUserInfo() {
-            $.ajax({
-                url: 'https://www.googleapis.com/oauth2/v1/userinfo?access_token=' + acToken,
-                data: null,
-                success: function(resp) {
-                    user    =   resp;
-                    console.log(user);
-                    $('#uName').text('Welcome ' + user.name);
-                    $('#imgHolder').attr('src', user.picture);
-                },
-                dataType: "jsonp"
-            });
-        }
-
-        //credits: http://www.netlobo.com/url_query_string_javascript.html
-        function gup(url, name) {
-            name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-            var regexS = "[\\#&]"+name+"=([^&#]*)";
-            var regex = new RegExp( regexS );
-            var results = regex.exec( url );
-            if( results == null )
-                return "";
-            else
-                return results[1];
-        }
-
-        function startLogoutPolling() {
-            $('#loginText').show();
-            $('#logoutText').hide();
-            loggedIn = false;
-            $('#uName').text('Welcome ');
-            $('#imgHolder').attr('src', 'none.jpg');
-        }
-
-    </script>
 
 </head>
 

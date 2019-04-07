@@ -21,6 +21,7 @@ function filterData() {
 
     // construct the query string
     //var url = 'https://data.austintexas.gov/resource/r3af-2r8x.json?traffic_report_status=ACTIVE';
+    // let ASR_APP_TOKEN = XJTlH3cyY5kG9wW87rqmlbcFY;
     var url;
     var endPoint = 'https://data.austintexas.gov/resource/r3af-2r8x.json?';
     var incidentStatus = document.getElementById("incidentStatus").value;

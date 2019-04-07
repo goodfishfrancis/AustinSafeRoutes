@@ -80,91 +80,6 @@
     Author: BootstrapMade.com
     Author URL: https://bootstrapmade.com
   ======================================================= -->
-  <script>
-        var OAUTHURL  =  'https://accounts.google.com/o/oauth2/auth?';
-        var VALIDURL  =  'https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=';
-        var SCOPE    =  'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email';
-        var CLIENTID  =  '246604600792-peh1f5ur8at3eqpasg7urvr9j1h08hn3.apps.googleusercontent.com';
-        var REDIRECT  =  'https://asolinge.create.stedwards.edu/AustinSafeRoutes/saveRoutes.html'
-        var LOGOUT   =  'http://accounts.google.com/Logout';
-        var TYPE    =  'token';
-        var _url    =  OAUTHURL + 'scope=' + SCOPE + '&client_id=' + CLIENTID + '&redirect_uri=' + REDIRECT + '&response_type=' + TYPE;
-        var acToken;
-        var tokenType;
-        var expiresIn;
-        var user;
-        var loggedIn  =  false;
-
-        function login() {
-            var win         =   window.open(_url, "windowname1", 'width=800, height=600'); 
-
-            var pollTimer   =   window.setInterval(function() { 
-                try {
-                    console.log(win.document.URL);
-                    if (win.document.URL.indexOf(REDIRECT) != -1) {
-                        window.clearInterval(pollTimer);
-                        var url =   win.document.URL;
-                        acToken =   gup(url, 'access_token');
-                        tokenType = gup(url, 'token_type');
-                        expiresIn = gup(url, 'expires_in');
-                        win.close();
-
-                        validateToken(acToken);
-                    }
-                } catch(e) {
-                }
-            }, 500);
-        }
-
-        function validateToken(token) {
-            $.ajax({
-                url: VALIDURL + token,
-                data: null,
-                success: function(responseText){  
-                    getUserInfo();
-                    loggedIn = true;
-                    $('#loginText').hide();
-                    $('#logoutText').show();
-                },  
-                dataType: "jsonp"  
-            });
-        }
-
-        function getUserInfo() {
-            $.ajax({
-                url: 'https://www.googleapis.com/oauth2/v1/userinfo?access_token=' + acToken,
-                data: null,
-                success: function(resp) {
-                    user    =   resp;
-                    console.log(user);
-                    $('#uName').text('Welcome ' + user.name);
-                    $('#imgHolder').attr('src', user.picture);
-                },
-                dataType: "jsonp"
-            });
-        }
-
-        //credits: http://www.netlobo.com/url_query_string_javascript.html
-        function gup(url, name) {
-            name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-            var regexS = "[\\#&]"+name+"=([^&#]*)";
-            var regex = new RegExp( regexS );
-            var results = regex.exec( url );
-            if( results == null )
-                return "";
-            else
-                return results[1];
-        }
-
-        function startLogoutPolling() {
-            $('#loginText').show();
-            $('#logoutText').hide();
-            loggedIn = false;
-            $('#uName').text('Welcome ');
-            $('#imgHolder').attr('src', 'none.jpg');
-        }
-
-    </script>
 
 </head>
 
@@ -178,15 +93,30 @@
       	  <span class="fa fa-bars color-white"></span>
         </button>
         <div class="navbar-logo">
-          <a href="index.html">Austin Safe Routes</a>
+          <a href="index.php">Austin Safe Routes</a>
         </div>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
-          <li class="active"><a href="index.html">Home</a></li>
-          <li class="active"><a href="#section-login">Sign In</a></li>
+          <li class="active"><a href="index.php">Home</a></li>
+          <?php  
+            // if user is not logged in, display 'Sign In'
+            if (!isset($_SESSION['access_token'])) {
+                echo "<li class='active'><a href='#section-login'>Log In</a>";
+            }
+            else {
+                echo "<li class='active'><a href='#section-login'>Log Out</a>";
+            }
+          ?>
           <li class="active"><a href="saveRoutes.php">Save Routes</a></li>
+          <li class="active"><a href="myRoutes.php">My Routes</a></li>
           <li><a href="#section-contact">Contact</a></li>
+          <?php  
+            // if user is logged in, display user picture
+            if (isset($_SESSION['access_token'])) {
+                echo "<li class='active'><img src=". $_SESSION['userPicture']." width='50' height='50'></li>";
+            }
+          ?>
         </ul>
       </div>
       <!--/.navbar-collapse -->
@@ -197,7 +127,12 @@
     <div class="intro-content">
       <h2>Austin SafeRoutes</h2>
       <div>
-        <a href="#section-services" class="btn-get-started scrollto">Log In</a>
+        <?php  
+            // if user is not logged in, display log in nav button
+            if (!isset($_SESSION['access_token'])) {
+                echo "<a href='#section-services' class='btn-get-started scrollto'>Log In</a>";
+            }
+        ?>
       </div>
     </div>
   </section>
@@ -303,7 +238,7 @@
       </div>
       <div class="row align-center mar-bot20">
         <ul class="footer-menu">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li><a href="#">About us</a></li>
           <li><a href="privacyPolicy.html">Privacy policy</a></li>
           <li><a href="#">Get in touch</a></li>

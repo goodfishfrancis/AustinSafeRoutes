@@ -72,12 +72,17 @@
          
         var str = JSON.stringify(data)
         var routeName = document.getElementById("routeName").value;
+        // var userPhone = document.getElementById("userPhone").value;
+        var userEmail = "<?php echo $_SESSION['email'] ?>";
+        console.log("route name: " + routeName);
+        console.log("user Email: " + userEmail);
+        
      
         var jax = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
         jax.open('POST','./php/process.php');
         jax.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
         // jax.send('command=save&mapdata='+str)
-        jax.send('command=save&mapdata='+str+'&routeName='+routeName)
+        jax.send('command=save&mapdata='+str+'&routeName='+routeName+'&userEmail='+userEmail)
         jax.onreadystatechange = function(){ if(jax.readyState==4) {
             if(jax.responseText.indexOf('bien')+1)alert('Updated');
             else alert(jax.responseText)
@@ -255,13 +260,21 @@
       	  <span class="fa fa-bars color-white"></span>
         </button>
         <div class="navbar-logo">
-          <a href="index.html">Austin SafeRoutes</a>
+          <a href="index.php">Austin SafeRoutes</a>
         </div>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li class="active"><a href="login.php">Sign Out</a></li>
+            <li class="active"><a href="index.php">Home</a></li>
+            <?php  
+                // if user is not logged in, display 'Sign In'
+                if (!isset($_SESSION['access_token'])) {
+                    echo "<li class='active'><a href='login.php'>Log In</a>";
+                }
+                else {
+                    echo "<li class='active'><a href='login.php'>Log Out</a>";
+                }
+            ?>
             <li class="active"><a href="saveRoutes.php">Save Routes</a></li>
             <li class="active"><a href="myRoutes.php">My Routes</a></li>
             <li><a href="#section-contact">Contact</a></li>
@@ -345,6 +358,29 @@
             </div>
         </div>
     </div>
+    <!--<div class="row"><br><br><br><br></div>-->
+    <!--<div class="row">-->
+    <!--    <div class="col-lg-4 mb-4">-->
+    <!--        <div class="card h-100">-->
+    <!--            <h4 class="card-header">Phone Number</h4>-->
+    <!--            <div class="card-body">-->
+    <!--                <p class="card-text">Enter the phone number to receive notifications</p>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    <div class="col-lg-6 mb-4">-->
+    <!--        <div class="card h-100">-->
+    <!--            <h4 class="card-header">Phone Number</h4>-->
+    <!--            <div class="input-group">-->
+    <!--                <div id="tools">-->
+                    
+    <!--                    <input id="userPhone" type="text" class="form-control mb-2" name="User Phone" placeholder="Enter Phone Number">-->
+    <!--                    <input type="submit" class="btn-create-route" value="Save Route" onClick="save_waypoints()">-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</div>-->
     <!--<div class="row">-->
     <!--    <div class="col-lg-6 mb-4">-->
     <!--        <div class="card h-100">-->
@@ -422,10 +458,10 @@
       </div>
       <div class="row align-center mar-bot20">
         <ul class="footer-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html">About us</a></li>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="index.php">About us</a></li>
           <li><a href="privacyPolicy.html">Privacy policy</a></li>
-          <li><a href="index.html">Get in touch</a></li>
+          <li><a href="index.php">Get in touch</a></li>
         </ul>
       </div>
       <div class="row align-center copyright">

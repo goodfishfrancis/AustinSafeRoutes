@@ -1,6 +1,14 @@
 <?php
     session_start();
     require_once "facebookConfig.php";
+    
+    // if user is not logged in, redirect to login page
+    if (!isset($_SESSION['access_token'])) {
+        //header('Location: login.php');
+        echo "<script>alert('Please Login To Continue');</script>";
+        echo "<script>location.href='https://asolinge.create.stedwards.edu/AustinSafeRoutes/login.php';</script>";
+        exit();
+    }
 
 ?>
 <!DOCTYPE html>
@@ -52,6 +60,34 @@
     var panoClient;
     var nextPanoId;
     var timerHandle = null;
+    
+    // marker array for displaying active incidents
+    var markers = [];
+    // // // Retrieve our incident data and plot it
+    function filterData() {
+         //Loop through all the markers and remove
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(null);
+        }
+    
+        // construct the query string
+        // let ASR_APP_TOKEN = 'XJTlH3cyY5kG9wW87rqmlbcFY';
+        // var url = 'https://data.austintexas.gov/resource/r3af-2r8x.json?$$app_token=ASR_APP_TOKEN&traffic_report_status=ACTIVE';
+        var url = 'https://data.austintexas.gov/resource/r3af-2r8x.json?traffic_report_status=ACTIVE';
+        $.getJSON(url, function(data) {
+          $.each(data, function(i, entry) {
+            markers[i] = new google.maps.Marker({
+              position: new google.maps.LatLng(entry.latitude,
+                                              entry.longitude),
+              map: map,
+              title: "INCIDENT TYPE: " + entry.issue_reported
+                    + ' \n' + "ADDRESS: " + entry.address
+                    + '\n' + "DATE & TIME: " + entry.published_date
+                    + '\n' + "STATUS: " + entry.traffic_report_status
+            });
+          });
+        });
+    }
     
     function fetchdata()
     {
@@ -264,13 +300,21 @@
       	  <span class="fa fa-bars color-white"></span>
         </button>
         <div class="navbar-logo">
-          <a href="index.html">Austin SafeRoutes</a>
+          <a href="index.php">Austin SafeRoutes</a>
         </div>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li class="active"><a href="login.php">Sign Out</a></li>
+            <li class="active"><a href="index.php">Home</a></li>
+            <?php  
+                // if user is not logged in, display 'Sign In'
+                if (!isset($_SESSION['access_token'])) {
+                    echo "<li class='active'><a href='login.php'>Log In</a>";
+                }
+                else {
+                    echo "<li class='active'><a href='login.php'>Log Out</a>";
+                }
+            ?>
             <li class="active"><a href="saveRoutes.php">Save Routes</a></li>
             <li class="active"><a href="myRoutes.php">My Routes</a></li>
             <li><a href="#section-contact">Contact</a></li>
@@ -295,6 +339,11 @@
 
   <!-- services -->
   <section id="section-services" class="section pad-bot30 bg-white">
+    <div class="row">
+        <div class="col-md-2">
+            <input type= "submit" value="Display Active Incidents" class ="btn-filter-data" onclick="filterData();"/>
+        </div>
+    </div>
     <div id="map"></div>
   </section>
   
@@ -330,7 +379,7 @@
                     {
                         
                         
-                        $sql = "SELECT route_name FROM mapdir";
+                        $sql = "SELECT route_name FROM mapdir WHERE email = "."'".$_SESSION['email']."'";
                         // query database for the username & password
                         $rs = $conn->query($sql);
                         
@@ -508,10 +557,10 @@
       </div>
       <div class="row align-center mar-bot20">
         <ul class="footer-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html">About us</a></li>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="index.php">About us</a></li>
           <li><a href="privacyPolicy.html">Privacy policy</a></li>
-          <li><a href="index.html">Get in touch</a></li>
+          <li><a href="index.php">Get in touch</a></li>
         </ul>
       </div>
       <div class="row align-center copyright">
