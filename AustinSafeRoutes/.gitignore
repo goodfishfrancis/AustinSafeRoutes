@@ -1,2 +1,3 @@
 .*/sftp.*
 */vendor
+php/*.json
