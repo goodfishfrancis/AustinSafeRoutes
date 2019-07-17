@@ -347,3 +347,7 @@ Stack trace:
 #1 {main}
   thrown in /home/asolinge/public_html/AustinSafeRoutes/admin.php on line 28
 [25-Mar-2019 03:40:50 UTC] PHP Parse error:  syntax error, unexpected '$msg' (T_VARIABLE), expecting ',' or ';' in /home/asolinge/public_html/AustinSafeRoutes/admin.php on line 68
+[12-Apr-2019 00:43:19 UTC] PHP Fatal error:  Uncaught Error: Call to a member function MoveNext() on null in /home/asolinge/public_html/AustinSafeRoutes/admin.php:57
+Stack trace:
+#0 {main}
+  thrown in /home/asolinge/public_html/AustinSafeRoutes/admin.php on line 57

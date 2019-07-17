@@ -52,11 +52,13 @@
         while($row = $result->fetch_assoc())
         { 
              $routeName = $row['route_name']; 
+             $routeLatLongs = $row['mapdir_data'];
              $email = $row['email'];
-             // $rs->MoveNext();
-             //echo "RouteName: " . $row["route_name"] . "\n";
-             //echo "route name: ". $row["route_name"]. ", email: ". $row['email'] . "\n";
-             // echo "\n";
+            //  $rs->MoveNext();
+            //  echo "RouteName: " . $row["route_name"] . "\n";
+            //  echo "email: ". $row['email'] . "\n";
+            //  echo "route data: ". $row["mapdir_data"] . "\n";
+            //  echo "\n";
            
             // send notification logic/function call/script call
             // the message
